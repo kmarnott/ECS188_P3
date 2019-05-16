@@ -20,17 +20,12 @@ In this step, we added a PAGE struct, which contains the number of TPS's referen
 
 ## Testing:
 Tester Files Provided for P3:
-
 - ```sem_buffer.c```
-
 - ```sem_count.c```
-
 - ```sem_prime.c```
-
 - ```tps.c```
 
 Additional Tester Files Generated:
-
 - ```tps_testsuite.c```
 
 In addition to the files provided, we implemented a test file which asserts that no threads are reading or writing outside of their own memory pages and that a TPS Protection Segfault is thrown if this occurs. This is done by iterating through all the TPS areas and searching to see if the fault origin's address matches one of the TPS. In this case, the error is a TPS protection fault, otherwise, it is a standard segfault. The test file further asserts that the proper behavior is exhibited by each function under its specific failing conditions.
